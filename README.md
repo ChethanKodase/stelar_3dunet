@@ -44,7 +44,12 @@ model 11:
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred34.png" alt="Ground Truth vs Prediction" width="600">
 
 
-1. Sample 2
+1. Sample 3
 
 <img src="./showcase/ensamble_results/no_oversampling/LAI_46.png" alt="LAI_46" width="400">
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred46.png" alt="Ground Truth vs Prediction" width="600">
+
+1. Sample 4
+
+<img src="./showcase/ensamble_results/no_oversampling/LAI_52.png" alt="LAI_52" width="400">
+<img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred52.png" alt="Ground Truth vs Prediction" width="600">
