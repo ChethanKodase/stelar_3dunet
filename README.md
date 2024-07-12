@@ -32,6 +32,13 @@ model 11:
 
 #### Qualitative results : 
 
+1. Sample 1
+
 <img src="./showcase/ensamble_results/no_oversampling/LAI_1.png" alt="LAI_1" width="400">
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred1.png" alt="Ground Truth vs Prediction" width="600">
 
+
+1. Sample 2
+
+<img src="./showcase/ensamble_results/no_oversampling/LAI_34.png" alt="LAI_34" width="400">
+<img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred34.png" alt="Ground Truth vs Prediction" width="600">
