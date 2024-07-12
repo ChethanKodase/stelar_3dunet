@@ -32,5 +32,5 @@ model 11:
 
 #### Qualitative results : 
 
-![plot](./ensamble_results/no_oversampling/LAI_2.png)
-![plot](./ensamble_results/no_oversampling/ground_truth_pred2.png)
+![plot](./ensamble_results/no_oversampling/LAI_1.png)
+![plot](./ensamble_results/no_oversampling/ground_truth_pred1.png)
