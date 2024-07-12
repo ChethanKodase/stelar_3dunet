@@ -34,3 +34,4 @@ model 11:
 
 ![plot](/home/luser/stelar_3dunet/showcase/ensamble_results/no_oversampling/LAI_1.png)
 ![plot](/home/luser/stelar_3dunet/showcase/ensamble_results/no_oversampling/ground_truth_pred1.png)
+
