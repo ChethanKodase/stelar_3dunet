@@ -31,8 +31,12 @@ model 11:
 
 #### Crop type representation in training data
 
-<img src="./showcase/representation/crop_representatio_exp1.png" alt="LAI_1" width="600">
+<img src="./showcase/representation/crop_representatio_exp1.png" alt="crop_representatio_exp1" width="600">
 
+
+### Intersection over union for crop types
+
+<img src="./showcase/iou/exp1_iou.png" alt="exp1_iou" width="600">
 
 #### Qualitative results : 
 
