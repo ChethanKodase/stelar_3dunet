@@ -29,6 +29,10 @@ model 2 :
 model 11:
     ...
 
+#### Crop type representation in training data
+
+<img src="./showcase/representation/crop_representatio_exp1.png" alt="LAI_1" width="600">
+
 
 #### Qualitative results : 
 
@@ -38,18 +42,20 @@ model 11:
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred1.png" alt="Ground Truth vs Prediction" width="600">
 
 
-1. Sample 2
+2. Sample 2
 
 <img src="./showcase/ensamble_results/no_oversampling/LAI_34.png" alt="LAI_34" width="400">
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred34.png" alt="Ground Truth vs Prediction" width="600">
 
 
-1. Sample 3
+3. Sample 3
 
 <img src="./showcase/ensamble_results/no_oversampling/LAI_46.png" alt="LAI_46" width="400">
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred46.png" alt="Ground Truth vs Prediction" width="600">
 
-1. Sample 4
+4. Sample 4
 
 <img src="./showcase/ensamble_results/no_oversampling/LAI_52.png" alt="LAI_52" width="400">
 <img src="./showcase/ensamble_results/no_oversampling/ground_truth_pred52.png" alt="Ground Truth vs Prediction" width="600">
+
+

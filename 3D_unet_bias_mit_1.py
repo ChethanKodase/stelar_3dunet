@@ -54,9 +54,9 @@ pip uninstall scikit-image
 export CUDA_VISIBLE_DEVICES=0
 conda deactivate
 conda deactivate
-cd stelar_3d/
+cd stelar_3dunet/
 source spt19/bin/activate
-python3 3D_unet_bias_mit_1.py --crop_1 14 --crop_2 15 --crop_3 16
+python3 3D_unet_bias_mit_1.py --crop_1 1 --crop_2 2 --crop_3 3
 python3 3D_unet_bias_mit_1.py --crop_1 18 --crop_2 19 --crop_3 20
 python3 3D_unet_bias_mit_1.py --crop_1 21 --crop_2 23 --crop_3 27
 
@@ -64,9 +64,9 @@ python3 3D_unet_bias_mit_1.py --crop_1 21 --crop_2 23 --crop_3 27
 export CUDA_VISIBLE_DEVICES=1
 conda deactivate
 conda deactivate
-cd stelar_3d/
+cd stelar_3dunet/
 source spt19/bin/activate
-python3 3D_unet_bias_mit_1.py --crop_1 28 --crop_2 30 --crop_3 32
+python3 3D_unet_bias_mit_1.py --crop_1 4 --crop_2 5 --crop_3 7
 python3 3D_unet_bias_mit_1.py --crop_1 33 --crop_2 34 --crop_3 35
 python3 3D_unet_bias_mit_1.py --crop_1 36 --crop_2 37 --crop_3 40
 python3 3D_unet_bias_mit_1.py --crop_1 37 --crop_2 40 --crop_3 41
@@ -85,6 +85,10 @@ from matplotlib import pyplot as plt
 from keras import backend as K
 from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
+
+
+exp_1 = False
+exp_2 = True
 
 
 num_epochs = 1500
@@ -107,19 +111,49 @@ cr_3 = args.crop_3
 
 chosen_crop_types_list = [cr_1, cr_2, cr_3]
 
+crop_types_all_list = [ 1,  2,  3,  4,  5,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 27, 28, 30, 32, 33, 34, 35, 36, 37, 40, 41]
+
+
 print("vista_crop_dict[chosen_crop_types_list[1]], vista_crop_dict[chosen_crop_types_list[1]], vista_crop_dict[chosen_crop_types_list[1]]", vista_crop_dict[chosen_crop_types_list[0]], vista_crop_dict[chosen_crop_types_list[1]], vista_crop_dict[chosen_crop_types_list[2]])
 
 all_input_img = []
 all_input_mask = []
-for i in chosen_crop_types_list:
-    input_img = io.imread('/home/luser/stelar_3d/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/train_'+vista_crop_dict[i]+'.tif')
-    input_mask = io.imread('/home/luser/stelar_3d/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/lab_'+vista_crop_dict[i]+'.tif').astype(np.uint8)
 
-    print("input_img.shape", input_img.shape)
-    print("input_mask.shape", input_mask.shape)
+if(exp_1):
+    for i in chosen_crop_types_list:
+        print("vista_crop_dict[i]", vista_crop_dict[i])
+        input_img = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/train_'+vista_crop_dict[i]+'.tif')
+        input_mask = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/lab_'+vista_crop_dict[i]+'.tif').astype(np.uint8)
 
-    all_input_img.append(input_img)
-    all_input_mask.append(input_mask)
+        print("input_img.shape", input_img.shape)
+        print("input_mask.shape", input_mask.shape)
+
+        all_input_img.append(input_img)
+        all_input_mask.append(input_mask)
+
+if(exp_2):
+    for i in crop_types_all_list:
+        if(i in chosen_crop_types_list):
+            print("vista_crop_dict[i]", vista_crop_dict[i])
+            input_img = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/train_'+vista_crop_dict[i]+'.tif')
+            input_mask = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/lab_'+vista_crop_dict[i]+'.tif').astype(np.uint8)
+
+            print("input_img.shape", input_img.shape)
+            print("input_mask.shape", input_mask.shape)
+
+            all_input_img.append(input_img)
+            all_input_mask.append(input_mask)
+        
+        else:
+            print("vista_crop_dict[i]", vista_crop_dict[i])
+            input_img = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/train_'+vista_crop_dict[i]+'.tif')
+            input_mask = io.imread('/home/luser/stelar_3dunet/storage/per_crop_data_labels/'+vista_crop_dict[i]+'/lab_'+vista_crop_dict[i]+'.tif').astype(np.uint8)
+
+            print("input_img.shape", input_img.shape)
+            print("input_mask.shape", input_mask.shape)
+
+            all_input_img.append(input_img[:40])
+            all_input_mask.append(input_mask[:40])
 
 input_img = np.concatenate((all_input_img), axis=0).reshape(-1, 64, 64, 64)
 #input_img = np.array(all_input_img).reshape(-1, 64, 64, 64)
@@ -129,8 +163,8 @@ input_mask = np.concatenate((all_input_mask), axis=0).reshape(-1, 64, 64)
 input_mask = np.repeat(input_mask[:, np.newaxis, :, :], repeats=64, axis=1)
 
 
-print("input_img.shape", input_img.shape)
-print("input_mask.shape", input_mask.shape)
+print("final input_img.shape", input_img.shape)
+print("final input_mask.shape", input_mask.shape)
 unique_elements, element_counts = np.unique(input_mask, return_counts=True)
 
 print("1 : unique_elements, element_counts", unique_elements, element_counts)
@@ -244,6 +278,7 @@ history=model.fit(X_train_prep,
           verbose=1,
           validation_data=(X_test_prep, y_test))
 
-
-
-model.save('/home/luser/stelar_3d/storage/saved_model/3D_unet_res_labels_'+vista_crop_dict[chosen_crop_types_list[0]]+'_'+vista_crop_dict[chosen_crop_types_list[1]]+'_'+vista_crop_dict[chosen_crop_types_list[2]]+'_num_epocs_'+str(num_epochs)+'.h5')
+if(exp_1):
+    model.save('/home/luser/stelar_3dunet/storage/saved_model/3D_unet_res_labels_'+vista_crop_dict[chosen_crop_types_list[0]]+'_'+vista_crop_dict[chosen_crop_types_list[1]]+'_'+vista_crop_dict[chosen_crop_types_list[2]]+'_num_epocs_'+str(num_epochs)+'.h5')
+if(exp_2):
+    model.save('/home/luser/stelar_3dunet/storage/saved_model_exp2/3D_unet_res_labels_'+vista_crop_dict[chosen_crop_types_list[0]]+'_'+vista_crop_dict[chosen_crop_types_list[1]]+'_'+vista_crop_dict[chosen_crop_types_list[2]]+'_num_epocs_'+str(num_epochs)+'.h5')
