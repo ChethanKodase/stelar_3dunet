@@ -11,6 +11,24 @@ Below is the dictionaly of crop types to predict:
 
 
 # Ensamble of models
+
+## Experiment 0
+
+This is a small scale example with lower coverage of landscape and less number of crop types. In this experiment we just considered the 10 percent of overall landscape. We consider corpp types ALFALFA, FOREST, GRAIN_MAIZE, GRASSLAND, LEGUMES, PERMANENT_PLANTATIONS and TEMPORARY_GRASSLAND and train three models to predict these crop types: 
+
+Below are the results: 
+
+Considered crop type distribution
+
+<img src=".showcase/small_scale_results/considered_distribution.png" alt="considered_distribution" width="600">
+
+
+
+
+
+
+
+
 ## Experiment 1 
 We train 11 different models such that each model predicts three crop types. We then create an ensamble of models and post process a cosolidated crop type prediction by the ensamble of models on a given spatio-temporal patch. 
 
