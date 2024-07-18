@@ -18,12 +18,14 @@ This is a small scale example with lower coverage of landscape and less number o
 
 Below are the results: 
 
-Considered crop type distribution
+### Considered crop type distribution
 
 <img src="./showcase/small_scale_results/considered_distribution.png" alt="considered_distribution" width="600">
 
 
+### Intersection over union for crop types
 
+<img src="./showcase/small_scale_results/iou_exp0.png" alt="iou_exp0" width="600">
 
 
 
