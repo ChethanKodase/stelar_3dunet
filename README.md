@@ -20,7 +20,7 @@ Below are the results:
 
 Considered crop type distribution
 
-<img src=".showcase/small_scale_results/considered_distribution.png" alt="considered_distribution" width="600">
+<img src="./showcase/small_scale_results/considered_distribution.png" alt="considered_distribution" width="600">
 
 
 
