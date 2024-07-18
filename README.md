@@ -28,7 +28,23 @@ Below are the results:
 <img src="./showcase/small_scale_results/iou_exp0.png" alt="iou_exp0" width="600">
 
 
+#### Qualitative results : 
 
+1. Sample 1
+
+<img src="./showcase/small_scale_results/LAI1.png" alt="LAI_1" width="400">
+<img src="./showcase/small_scale_results/ground_pred1.png" alt="Ground Truth vs Prediction" width="600">
+
+
+1. Sample 2
+
+<img src="./showcase/small_scale_results/LAI2.png" alt="LAI_2" width="400">
+<img src="./showcase/small_scale_results/ground_pred2.png" alt="Ground Truth vs Prediction" width="600">
+
+1. Sample 3
+
+<img src="./showcase/small_scale_results/LAI3.png" alt="LAI_2" width="400">
+<img src="./showcase/small_scale_results/ground_pred3.png" alt="Ground Truth vs Prediction" width="600">
 
 
 ## Experiment 1 
